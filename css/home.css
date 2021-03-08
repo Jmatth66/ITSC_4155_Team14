@@ -12,10 +12,11 @@ nav {
 /*Define the display of the logo bar and justify all content, as well as applying some padding*/
 .logobar {
     display: flex;
-    justify-content: center;
-    padding: 1em;
+    justify-content: flex-start;
+	overflow: hidden;
     background-color: white;
 }
+
 
 /*For all boxes in navbar justify to center and remove stylization, change background color to gray*/
 .navbar {
