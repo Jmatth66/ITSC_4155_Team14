@@ -85,12 +85,14 @@ body {
 
 .pageText {
     vertical-align: top;
-    width: 95%;
+    width: auto;
     text-align: left;
     font-family: 'Nunito', sans-serif;
     font-size: 1.25vw;
 	font-weight: bold;
 	padding: 1em;
+    margin-right: 3em;
+    margin-left: 3em;
 }
 
 /*This is the foot color set*/
@@ -99,18 +101,4 @@ footer {
     font-family: 'Nunito', sans-serif;
     font-size: .75vw;
     color: white;
-}
-.animate{
-    animation: animatetop 1s;
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-    to {
-        top: 0;
-        opacity: 1
-    }
 }
