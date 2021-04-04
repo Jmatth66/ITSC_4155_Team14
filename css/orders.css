@@ -120,3 +120,8 @@ footer {
     margin-right: 3em;
     margin-left: 3em;
 }
+
+table, td{
+  border: 2.5px solid black;
+  padding: 15px;
+}
