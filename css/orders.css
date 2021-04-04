@@ -91,3 +91,32 @@ footer {
 .animate{
     animation: animatetop 1s;
 }
+
+.pageHeader {
+    vertical-align: top;
+    width: 100%;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2vw;
+}
+
+.headerBar {
+    margin-left: 12.5%;
+     width: 75%;
+    height: .5em;
+    background-color: gray;
+    margin-bottom: 4em;
+    border-radius: 5px;
+}
+
+.pageText {
+    vertical-align: top;
+    width: auto;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25vw;
+	font-weight: bold;
+	padding: 1em;
+    margin-right: 3em;
+    margin-left: 3em;
+}
