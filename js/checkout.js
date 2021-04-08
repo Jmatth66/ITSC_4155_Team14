@@ -15,6 +15,12 @@ function StartUp() {
         var cartList = "<tr><th>Item</th><th>Quantity</th><th>Price</th></tr>\n";
         var i = 0;
 
+        for (i = 0; i <= localStorage.length-1; i++) {
+            key = localStorage.key(i);
+            list += "<tr><td>" + key + "</td>\n<td>"
+                + localStorage.getItem(key) + "</td></tr>\n";
+        }
+
         //checks if the cartList value is empty, by default it should be
         if (cartList == "<tr><th>Item</th><th>Quantity</th><th>Price</th></tr>\n") {
             //adds inbound items from the addToCart function

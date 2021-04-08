@@ -1,5 +1,5 @@
 window.setInterval(onUpdate, 100);
-localStorage.productKey="key";
+//localStorage.productKey="key";
 
 let itemList = ["corn","wheat", "oats", "barley", "hogFeed", "groundFeed", "scratchFeed", "layingFeed", "broilerFeed", "sweetFeed", "allStock", "fiftyFifty"];
 let typeList = ["bag", "barrel", "sack", "pallet"];
@@ -39,9 +39,21 @@ function onUpdate()
 	}
 }
 
-function AddToCart(){
-	var productKey = document.forms.
-	var quantity = document.getElementById(productKey).value();
-	localStorage.setItem()
-
+function AddToCart(element){
+	let productKey = element.name;
+	alert(productKey);
+	let name = element.className;
+	alert(name);
+	let type = document.getElementById(productKey).getElementsByClassName("type")[0].textContent;
+	alert(type);
+	let price = document.getElementById(productKey).getElementsByClassName("price")[0].textContent;
+	alert(price);
+	let quantity = document.getElementById(productKey).getElementsByClassName("amount")[0].value;
+	alert(quantity);
+	alert("Product Key Captured: " + productKey + " Name Captured: " + name + " Type Captured: " + type + " Price Captured: " + price + " Quantity Captured: " + quantity);
+	localStorage.setItem(productKey, name);
+	localStorage.setItem(productKey, type);
+	localStorage.setItem(productKey, price);
+	localStorage.setItem(productKey, quantity);
+	//window.location.href = "checkout.html";
 }

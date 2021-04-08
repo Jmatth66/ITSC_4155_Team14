@@ -6,7 +6,7 @@
     <!--Sets viewport which gives instruction to scaling and dimensions-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/orders.css">
-	 
+
     <!––Import of a custom google font-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
 </head>
@@ -38,481 +38,495 @@
 </nav>
 <main>
 
-<!--Page Header-->
+    <!--Page Header-->
     <div class="pageHeader">
         <h1>Place your order here</h1>
     </div>
     <div class="headerBar"></div>
-	
-	<div class="pageText">
-		<h2>How it works</h2>
-            <p>For each item you can select the amount you want in:</p>
-			<ul>
-				<li>Bags</li>
-				<li>Barrels</li>
-				<li>Sacks</li>
-				<li>Pallets</li>
-			</ul>
-			<p>If you don't want an item in the other containers then you can simply
-			leave the box blank, or type a zero. For example, if I wanted to order
-			10 bags of Hog feed then I would type 10 in the box next to bags, and 
-			leave the other boxes blank.</p>
-		<br>
-			
-		<h2>Weights and Amounts</h2>
-			<p>The weight of each item goes as follows:</p>
-			<table>
-				<tr>
-					<th>Type</th>
-					<th>Weight</th>
-					<th>Amount in Bags</th>
-				</tr>
-				<tr>
-					<td>Bag</td>
-					<td>50 lbs.</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>Barrel</td>
-					<td>350 lbs.</td>
-					<td>7</td>
-				</tr>
-				<tr>
-					<td>Sack</td>
-					<td>2,000 lbs.</td>
-					<td>40</td>
-				</tr>
-				<tr>
-					<td>Pallet</td>
-					<td>2,000 lbs.</td>
-					<td>40</td>
-				</tr>
-			</table>
-			<p><i>*Barrels and pallets add additional weight. Roughly 10-15 lbs. This weight does NOT take away from the weight of the grain / feed inside!</i></p>
-		<br><hr>
-		
-		<h2>Corn</h2>
-			<div id = "corn">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-						<th>Add to Cart test</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$8</td>
-						<td>120</td>
-						<td><input id="CORN1" type="number" class="bagAmount" min=0 max=120 value="0">
-						<td class ="bagTotal"></td>
-						<td><input type="button" value="Add to cart" onclick="AddToCart()"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$320</td>
-						<td>4</td>
-						<td><input type="number" class="palletAmount" min="0" max="4" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Wheat</h2>
-			<div id = "wheat">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$8</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$320</td>
-						<td>4</td>
-						<td><input type="number" class="palletAmount" min="0" max="4" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Oats</h2>
-			<div id = "oats">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$10</td>
-						<td>80</td>
-						<td><input type="number" class="bagAmount" min=0 max=80 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$63</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Barley</h2>
-			<div id = "barley">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$8</td>
-						<td>40</td>
-						<td><input type="number" class="bagAmount" min=0 max=40 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Hog Feed</h2>
-			<div id = "hogFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$13</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$84</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$480</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$520</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Ground Feed</h2>
-			<div id = "groundFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$10</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$63</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$360</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$400</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Scratch Feed</h2>
-			<div id = "scratchFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$11</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$70</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$400</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$440</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Laying Feed</h2>
-			<div id = "layingFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$16</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$105</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$600</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$640</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Broiler Feed</h2>
-			<div id = "broilerFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$17</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$112</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$640</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$680</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>Sweet Feed</h2>
-			<div id = "sweetFeed">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$12</td>
-						<td>80</td>
-						<td><input type="number" class="bagAmount" min=0 max=80 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>All Stock</h2>
-			<div id = "allStock">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$12</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="barrel">Barrels</td>
-						<td class="barrelPrice">$77</td>
-						<td>10</td>
-						<td><input type="number" class="barrelAmount" min="0" max="10" value="0"> 
-						<td class ="barrelTotal"></td>
-					</tr>
-					<tr>
-						<td class="sack">Sacks</td>
-						<td class="sackPrice">$440</td>
-						<td>6</td>
-						<td><input type="number" class="sackAmount" min="0" max="6" value="0"> 
-						<td class ="sackTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$480</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-		<h2>50/50</h2>
-			<div id = "fiftyFifty">
-				<table>
-					<tr>
-						<th>Type</th>
-						<th>Price</th>
-						<th>Limit</th>
-						<th>Select Amount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td class="bag">Bags</td>
-						<td class="bagPrice">$12</td>
-						<td>120</td>
-						<td><input type="number" class="bagAmount" min=0 max=120 value="0"> 
-						<td class ="bagTotal"></td>
-					</tr>
-					<tr>
-						<td class="pallet">Pallets</td>
-						<td class="palletPrice">$480</td>
-						<td>6</td>
-						<td><input type="number" class="palletAmount" min="0" max="6" value="0"> 
-						<td class ="palletTotal"></td>
-					</tr>
-				</table>
-				<br>
-			</div>
-		<br><hr>
-		
-	</div>
-	<script src="js/orders.js"></script>
+
+    <div class="pageText">
+        <h2>How it works</h2>
+        <p>For each item you can select the amount you want in:</p>
+        <ul>
+            <li>Bags</li>
+            <li>Barrels</li>
+            <li>Sacks</li>
+            <li>Pallets</li>
+        </ul>
+        <p>If you don't want an item in the other containers then you can simply
+            leave the box blank, or type a zero. For example, if I wanted to order
+            10 bags of Hog feed then I would type 10 in the box next to bags, and
+            leave the other boxes blank.</p>
+        <br>
+
+        <h2>Weights and Amounts</h2>
+        <p>The weight of each item goes as follows:</p>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Weight</th>
+                <th>Amount in Bags</th>
+            </tr>
+            <tr>
+                <td>Bag</td>
+                <td>50 lbs.</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Barrel</td>
+                <td>350 lbs.</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Sack</td>
+                <td>2,000 lbs.</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Pallet</td>
+                <td>2,000 lbs.</td>
+                <td>40</td>
+            </tr>
+        </table>
+        <p><i>*Barrels and pallets add additional weight. Roughly 10-15 lbs. This weight does NOT take away from the
+            weight of the grain / feed inside!</i></p>
+        <br>
+        <hr>
+
+        <h2>Corn</h2>
+        <div id="corn">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                    <th>Add to Cart test</th>
+                </tr>
+                <tr id="CORN_BAG">
+                    <td class="type">Bags</td>
+                    <td class="price">$8</td>
+                    <td>120</td>
+                    <td><input name="amount" type="number" class="amount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                    <td><input name="CORN_BAG" class="Corn" type="button" value="Add to cart" onclick="AddToCart(this)"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$320</td>
+                    <td>4</td>
+                    <td><input type="number" class="palletAmount" min="0" max="4" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Wheat</h2>
+        <div id="wheat">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$8</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$320</td>
+                    <td>4</td>
+                    <td><input type="number" class="palletAmount" min="0" max="4" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Oats</h2>
+        <div id="oats">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$10</td>
+                    <td>80</td>
+                    <td><input type="number" class="bagAmount" min=0 max=80 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$63</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Barley</h2>
+        <div id="barley">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$8</td>
+                    <td>40</td>
+                    <td><input type="number" class="bagAmount" min=0 max=40 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Hog Feed</h2>
+        <div id="hogFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$13</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$84</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$480</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$520</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Ground Feed</h2>
+        <div id="groundFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$10</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$63</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$360</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$400</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Scratch Feed</h2>
+        <div id="scratchFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$11</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$70</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$400</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$440</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Laying Feed</h2>
+        <div id="layingFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$16</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$105</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$600</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$640</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Broiler Feed</h2>
+        <div id="broilerFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$17</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$112</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$640</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$680</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Sweet Feed</h2>
+        <div id="sweetFeed">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$12</td>
+                    <td>80</td>
+                    <td><input type="number" class="bagAmount" min=0 max=80 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>All Stock</h2>
+        <div id="allStock">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$12</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="barrel">Barrels</td>
+                    <td class="barrelPrice">$77</td>
+                    <td>10</td>
+                    <td><input type="number" class="barrelAmount" min="0" max="10" value="0">
+                    <td class="barrelTotal"></td>
+                </tr>
+                <tr>
+                    <td class="sack">Sacks</td>
+                    <td class="sackPrice">$440</td>
+                    <td>6</td>
+                    <td><input type="number" class="sackAmount" min="0" max="6" value="0">
+                    <td class="sackTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$480</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+        <h2>50/50</h2>
+        <div id="fiftyFifty">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Limit</th>
+                    <th>Select Amount</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="bag">Bags</td>
+                    <td class="bagPrice">$12</td>
+                    <td>120</td>
+                    <td><input type="number" class="bagAmount" min=0 max=120 value="0">
+                    <td class="bagTotal"></td>
+                </tr>
+                <tr>
+                    <td class="pallet">Pallets</td>
+                    <td class="palletPrice">$480</td>
+                    <td>6</td>
+                    <td><input type="number" class="palletAmount" min="0" max="6" value="0">
+                    <td class="palletTotal"></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <br>
+        <hr>
+
+    </div>
+    <script src="js/orders.js"></script>
 </main>
 <!--This is the beginning of the footer-->
 <footer>
