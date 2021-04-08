@@ -1,4 +1,5 @@
 window.setInterval(onUpdate, 100);
+localStorage.productKey="key";
 
 let itemList = ["corn","wheat", "oats", "barley", "hogFeed", "groundFeed", "scratchFeed", "layingFeed", "broilerFeed", "sweetFeed", "allStock", "fiftyFifty"];
 let typeList = ["bag", "barrel", "sack", "pallet"];
@@ -36,4 +37,11 @@ function onUpdate()
 			}
 		}
 	}
+}
+
+function AddToCart(){
+	var productKey = document.forms.
+	var quantity = document.getElementById(productKey).value();
+	localStorage.setItem()
+
 }
