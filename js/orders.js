@@ -33,10 +33,37 @@ function onUpdate()
 						this.value = max; 
 					}
 				}
-				item.getElementsByClassName(typeList[y]+ "Total")[0].textContent = "$" + price * amount;
+				item.getElementsByClassName(typeList[y]+ "Total")[0].textContent = "$" + price * amount;				
 			}
 		}
 	}
+}
+
+function AddToCartTest(element){
+	var productKey = element.name;
+	var thisItem = document.getElementById(productKey);
+	var thisType;
+	var thisQuantity;
+	var thisPrice;
+		
+		for (var y = 0; y < typeList.length; y++)
+		{
+			thisType = thisItem.getElementsByClassName(typeList[y])[0];
+			if(typeof(thisType) != 'undefined' && thisType != null)
+			{
+				thisQuantity = thisItem.getElementsByClassName(typeList[y]+ "Amount")[0].value
+				if (thisQuantity > 0)
+				{	
+					thisPrice = thisItem.getElementsByClassName(typeList[y]+ "Price")[0].textContent.replace(/\$/g, '');	
+					
+					alert("Name: " + productKey + "\nType: " + typeList[y] + "\nPrice: " + thisPrice + "\nQuantity: " + thisQuantity);
+					localStorage.setItem(productKey, thisItem.name);
+					localStorage.setItem(productKey, thisType);
+					localStorage.setItem(productKey, thisPrice);
+					localStorage.setItem(productKey, thisQuantity);
+				}
+			}
+		}
 }
 
 function AddToCart(element){
