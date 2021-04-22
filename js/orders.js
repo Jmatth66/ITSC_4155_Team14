@@ -57,10 +57,10 @@ function AddToCartTest(element){
 					thisPrice = thisItem.getElementsByClassName(typeList[y]+ "Price")[0].textContent.replace(/\$/g, '');	
 					
 					alert("Name: " + productKey + "\nType: " + typeList[y] + "\nPrice: " + thisPrice + "\nQuantity: " + thisQuantity);
-					localStorage.setItem(productKey, thisItem.name);
-					localStorage.setItem(productKey, thisType);
-					localStorage.setItem(productKey, thisPrice);
-					localStorage.setItem(productKey, thisQuantity);
+					//localStorage.setItem(productKey, thisItem.name);
+					//localStorage.setItem(productKey, thisType);
+					localStorage.setItem(productKey + typeList[y], thisPrice);
+					localStorage.setItem(productKey + typeList[y], thisQuantity);
 				}
 			}
 		}
