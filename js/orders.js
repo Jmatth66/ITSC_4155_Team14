@@ -34,7 +34,7 @@ function onUpdate() {
     }
 }
 
-function AddToCartTest(element) {
+function AddToCart(element) {
 
     var productKey = element.name;
     var thisItem = document.getElementById(productKey);
