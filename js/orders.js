@@ -1,8 +1,8 @@
 window.setInterval(onUpdate, 100);
 //localStorage.productKey="key";
 
-let itemList = ["corn", "wheat", "oats", "barley", "hogFeed", "groundFeed", "scratchFeed", "layingFeed", "broilerFeed", "sweetFeed", "allStock", "fiftyFifty"];
-let typeList = ["bag", "barrel", "sack", "pallet"];
+const itemList = ["corn", "wheat", "oats", "barley", "hogFeed", "groundFeed", "scratchFeed", "layingFeed", "broilerFeed", "sweetFeed", "allStock", "fiftyFifty"];
+const typeList = ["bag", "barrel", "sack", "pallet"];
 
 let item;
 let type;
