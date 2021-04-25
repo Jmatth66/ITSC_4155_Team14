@@ -43,13 +43,38 @@
     <div class="pageHeader">
         <h1>Checkout</h1>
     </div>
-    <form method="post" name="orderEmailForm" action="orderSubmission.php">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+		<script type="text/javascript">
+			(function() 
+			{
+				emailjs.init('user_CzKiSYpVmQBddrrGohgW8');
+			})();
+		</script>
+		
+	<script type="text/javascript">
+        window.onload = function() 
+		{
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('service_yob21g8', 'template_5rq5evc', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+		</script>
+	
+    <form id="contact-form">
         <div id="cart_table">
             <hr>
             <div>
-                <table id="cart"></table>
+                <table id="cart" name="cart"></table>
+				<h2 id="total" name="total">Total: </h2>
                 <label><input type="button" class="clearAll" value="Clear my cart" onclick="ClearAll()"></label>
             </div>
+			
         </div>
         <div class="contactInfoContainer">
             <hr>
@@ -60,28 +85,27 @@
             <!--Form option name-->
             <div class="infoBox">
                 <label>Name:</label><br>
-                <input type="text" title="name" alt="name" id="name" required>
+                <input type="text" title="name" alt="name" id="name" name="name" required>
             </div>
             <!--Form option phone-->
             <div class="infoBox">
                 <label>Phone:</label><br>
-                <input type="text" title="phone" alt="phone" id="phone" required>
+                <input type="tel" title="phone" alt="phone" id="phone" name="phone" required>
             </div>
             <!--Form option email-->
             <div class="infoBox">
                 <label>Email:</label><br>
-                <input type="email" title="email" alt="email" id="email" required>
+                <input type="email" title="email" alt="email" id="email" name="email" required>
             </div>
             <!--Form option order comments-->
             <div class="infoBox">
                 <label>Comments or requests:</label><br>
                 <textarea id="comments" name="comments" rows="5" cols="80"></textarea>
             </div>
-
-
             <input type="submit" value="Submit Order">
         </div>
     </form>
+	
 </main>
 <!--This is the beginning of the footer-->
 <footer>
