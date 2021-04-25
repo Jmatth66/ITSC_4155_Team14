@@ -48,8 +48,7 @@ function AddToCart(element) {
             thisQuantity = thisItem.getElementsByClassName(typeList[y] + "Amount")[0].value
             if (thisQuantity > 0) {
                 thisPrice = thisItem.getElementsByClassName(typeList[y] + "Price")[0].textContent.replace(/\$/g, '');
-
-                alert("Name: " + element.name + "\nType: " + typeList[y] + "\nPrice: " + thisPrice + "\nQuantity: " + thisQuantity);
+                
 
                 localStorage.setItem(productKey + typeList[y], productKey + " " + typeList[y] + "." + thisQuantity + "." + thisPrice);
             }
