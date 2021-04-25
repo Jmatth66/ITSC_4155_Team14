@@ -41,6 +41,7 @@ ul.navbar {
 /*This is formatting for the contents of each block*/
 .navbar li a {
     width: 5em;
+    height: 100%;
     font-family: 'Nunito', sans-serif;
     font-size: 1.25vw;
     display: inline-block;
@@ -63,14 +64,6 @@ body {
     background-color: white;
     height: auto;
     font-family: 'Nunito', sans-serif;
-}
-
-/*This defines the color and size adjustments for the main body, overrides old resets*/
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: auto;
 }
 
 .pageHeader {
@@ -127,6 +120,17 @@ input[type="button"], [type="submit"] {
     font-weight: bold;
     filter: drop-shadow(.2em .2em .2em #5a5a5a);
     overflow: hidden;
+}
+
+input.delete {
+    width: 5em;
+    height: 2em;
+    margin: 0;
+    background-color: orangered;
+}
+
+input.clearAll {
+    background-color: orangered;
 }
 
 .display-bottomleft {

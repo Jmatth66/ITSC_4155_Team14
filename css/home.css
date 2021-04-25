@@ -41,6 +41,7 @@ ul.navbar {
 /*This is formatting for the contents of each block*/
 .navbar li a {
     width: 5em;
+    height: 100%;
     font-family: 'Nunito', sans-serif;
     font-size: 1.25vw;
     display: inline-block;
@@ -129,18 +130,4 @@ footer {
     font-family: 'Nunito', sans-serif;
     font-size: .75vw;
     color: white;
-}
-.animate{
-    animation: animatetop 1s;
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-    to {
-        top: 0;
-        opacity: 1
-    }
 }

@@ -41,6 +41,7 @@ ul.navbar {
 /*This is formatting for the contents of each block*/
 .navbar li a {
     width: 5em;
+    height: 100%;
     font-family: 'Nunito', sans-serif;
     font-size: 1.25vw;
     display: inline-block;
