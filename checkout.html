@@ -9,6 +9,7 @@
     <!––Import of a custom google font-->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <script src="js/checkout.js"></script>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 <nav>
@@ -33,7 +34,7 @@
             <!--Help page reference-->
             <li><a href="help.html">Help</a></li>
             <!--Checkout page reference-->
-            <li><a href="checkout.html"><img src="images/cartLogo.png"></a></li>
+            <li><a href="checkout.html"><img src="images/cartLogo.png" title="Checkout" alt="Cart"></a></li>
         </ul>
     </div>
     <!--This is the end of the navbar-->
@@ -43,23 +44,22 @@
     <div class="pageHeader">
         <h1>Checkout</h1>
     </div>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-		<script type="text/javascript">
-			(function() 
-			{
-				emailjs.init('user_CzKiSYpVmQBddrrGohgW8');
-			})();
-		</script>
-	
-    <form id="contact-form">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('user_CzKiSYpVmQBddrrGohgW8');
+        })();
+    </script>
+
+    <form id="contact-form" action="" method="post" onsubmit="submitSuccess();">
         <div id="cart_table">
             <hr>
             <div>
                 <table id="cart" name="cart"></table>
-				<h2 id="total" name="total">Total: </h2>
+                <h2 id="total" name="total">Total: </h2>
                 <label><input type="button" class="clearAll" value="Clear my cart" onclick="ClearAll()"></label>
             </div>
-			
+
         </div>
         <div class="contactInfoContainer">
             <hr>
@@ -87,10 +87,16 @@
                 <label>Comments or requests:</label><br>
                 <textarea id="comments" name="comments" rows="5" cols="80"></textarea>
             </div>
-            <input type="submit" value="Submit Order">
+            <div class="h-captcha" data-sitekey="6e1c92a8-c0e6-4bba-a8ee-99aad779b5fc" data-callback="submitCheck"></div>
+            <br />
+            <input id="formSubmit" type="submit" disabled="disabled" value="Submit Order">
         </div>
     </form>
-	
+    <div class="hiddenCaptcha">
+        This site is protected by hCaptcha and its
+        <a href="https://hcaptcha.com/privacy">Privacy Policy</a> and
+        <a href="https://hcaptcha.com/terms">Terms of Service</a> apply.
+    </div>
 </main>
 <!--This is the beginning of the footer-->
 <footer>

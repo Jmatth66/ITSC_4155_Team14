@@ -66,77 +66,16 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+main{
+    height: 39.5em;
+}
+
 .pageHeader {
     vertical-align: top;
     width: 100%;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     font-size: 2vw;
-}
-
-.contactInfoContainer {
-    margin-left: 30%;
-    margin-right: 30%;
-    text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.infoBox {
-    padding: 15px 32px;
-}
-
-#cart_table {
-    margin: auto;
-    text-align: center;
-    width: 50%;
-}
-
-table {
-    margin: auto;
-    text-align: center;
-    padding-bottom: 3em;
-    font-size: 1.25vw;
-}
-
-tr {
-    width: 10em;
-    height: 3em;
-}
-
-th {
-    width: 10em;
-    height: 3em;
-}
-
-input[type="button"], [type="submit"] {
-    width: 10em;
-    height: 4em;
-    margin-top: 2em;
-    background-color: forestgreen;
-    color: white;
-    border-radius: 5px;
-    font-size: large;
-    font-weight: bold;
-    filter: drop-shadow(.2em .2em .2em #5a5a5a);
-    overflow: hidden;
-}
-
-input.delete {
-    width: 5em;
-    height: 2em;
-    margin: 0;
-    background-color: orangered;
-}
-
-input.clearAll {
-    background-color: orangered;
-}
-
-.hiddenCaptcha {
-    width: 100%;
-    margin: auto;
-    text-align: center;
 }
 
 .display-bottomleft {
