@@ -75,14 +75,12 @@ window.onload = function () {
 function submitCheck(token) {
     if (token != null) {
         document.getElementById('formSubmit').disabled = false;
-        alert("captcha completed");
     } else {
         alert("Please complete the captcha");
     }
 }
 
 function submitSuccess() {
-    alert("Order Successfully placed");
     localStorage.clear();
     window.location.href = "thankYou.html"
 }
