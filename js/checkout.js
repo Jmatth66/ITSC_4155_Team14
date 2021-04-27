@@ -8,6 +8,7 @@ window.addEventListener('load', function () {
 })
 
 var total = 0;
+var itemCount;
 var contents;
 
 var nameInput;
@@ -21,10 +22,14 @@ const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9
 
 
 function StartUp() {
+	
+	itemCount = 0;
+	total = 0;
+	
     //checks browser support for local storage
     if ('localStorage' in window && window['localStorage'] == null) {
         alert("This browser does not support localStorage, please try again on another browser");
-    } else {
+    } else{
         var productKey = "";
 		
 		nameInput = document.getElementById('name');
@@ -37,18 +42,22 @@ function StartUp() {
         var i = 0;
         var subTotal;
 
-        total = 0;
         contents = cartList;
 
-        //takes the storage length and goes through each item grabbing the string associated with each key and deconstructs its data
+		if (localStorage.length > 0) {
+			
+		//takes the storage length and goes through each item grabbing the string associated with each key and deconstructs its data
         for (i = 0; i <= localStorage.length - 1; i++) {
             productKey = localStorage.getItem(localStorage.key(i));
             let temp = productKey.split(".");
+			itemCount++;
             subTotal = (temp[1] * temp[2]);
             cartList += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal + "</td>\n<td><input type=\"button\" class=\"delete\" value=\"Remove\" onclick=\"deleteItem(this)\"></td></tr>";
             contents += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal;
             total += subTotal;
         }
+		
+		}
 
         //takes blank data from the above function and creates an empty list within the cart element
         document.getElementById('cart').innerHTML = cartList;
@@ -75,7 +84,7 @@ window.onload = function () {
 
 		if (!emailValid){
 			alert("Invalid Email Address!");
-		}else {
+		}else if (itemCount > 0){
 		
         emailjs.send("service_yob21g8", "template_5rq5evc",
             {
@@ -92,6 +101,8 @@ window.onload = function () {
             }, function (error) {
                 console.log('FAILED...', error);
             });
+		} else{
+			alert("Your cart is empty");
 		}
     });
 }
