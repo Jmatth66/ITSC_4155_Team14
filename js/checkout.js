@@ -2,10 +2,23 @@
 window.addEventListener('load', function () {
     console.log('All assets are loaded')
     StartUp();
+	document.getElementById('name').addEventListener('input', validateName);
+	document.getElementById('phone').addEventListener('input', validatePhone);
+	document.getElementById('email').addEventListener('input', validateEmail);
 })
 
 var total = 0;
 var contents;
+
+var nameInput;
+var phoneInput;
+var emailInput;
+var commentInput;
+var emailValid = false;
+
+const reg = /[<>"'/]/ig;
+const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
 function StartUp() {
     //checks browser support for local storage
@@ -13,6 +26,11 @@ function StartUp() {
         alert("This browser does not support localStorage, please try again on another browser");
     } else {
         var productKey = "";
+		
+		nameInput = document.getElementById('name');
+		phoneInput = document.getElementById('phone');
+		emailInput = document.getElementById('email');
+		commentInput = document.getElementById('comments')
 
         //initialize a empty checkout table
         var cartList = "<tr><th>Item</th><th>Quantity</th><th>Price Per Unit</th><th>Sub-Total</th></tr>\n";
@@ -55,6 +73,10 @@ window.onload = function () {
         event.preventDefault();
         //emailjs.sendForm('service_yob21g8', 'template_5rq5evc', this)
 
+		if (!emailValid){
+			alert("Invalid Email Address!");
+		}else {
+		
         emailjs.send("service_yob21g8", "template_5rq5evc",
             {
                 name: document.getElementById('name').value,
@@ -62,13 +84,15 @@ window.onload = function () {
                 phone: document.getElementById('phone').value,
                 cost: total,
                 contents: contents,
-                comments: document.getElementById('comments').innerHTML,
+                comments: validateComment(commentInput.innerHTML),
             })
             .then(function () {
                 console.log('SUCCESS!');
+				submitSuccess()
             }, function (error) {
                 console.log('FAILED...', error);
             });
+		}
     });
 }
 
@@ -83,4 +107,29 @@ function submitCheck(token) {
 function submitSuccess() {
     localStorage.clear();
     window.location.href = "thankYou.html"
+}
+
+function validateName(){
+	nameInput.value = nameInput.value.replace(reg, '');
+}
+
+function validatePhone(){
+	phoneInput.value = phoneInput.value.replace(/\D/g,'');
+}
+
+function validateComment(string){
+	const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+	};
+	return string.replace(reg, (match)=>(map[match]));
+}
+
+function validateEmail(){
+	emailInput.value = emailInput.value.replace(reg, '');
+	emailValid = re.test(String(emailInput.value).toLowerCase());
 }
