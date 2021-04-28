@@ -135,20 +135,6 @@ body {
     float: right;
 }
 
-.colorTagTop {
-    width: 1em;
-    height: 9.5em;
-    float: right;
-	vertical-align: top;
-}
-
-.colorTagBottom {
-    width: 1em;
-    height: 9.5em;
-    float: right;
-	vertical-align: bottom;
-}
-
 .productImage {
     width: 21.875em;
     height: 19em;
