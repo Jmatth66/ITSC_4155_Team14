@@ -43,22 +43,20 @@ function StartUp() {
         var subTotal;
 
         contents = cartList;
-
-		if (localStorage.length > 0) {
 			
 		//takes the storage length and goes through each item grabbing the string associated with each key and deconstructs its data
         for (i = 0; i <= localStorage.length - 1; i++) {
             productKey = localStorage.getItem(localStorage.key(i));
             let temp = productKey.split(".");
-			itemCount++;
-            subTotal = (temp[1] * temp[2]);
-            cartList += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal + "</td>\n<td><input type=\"button\" class=\"delete\" value=\"Remove\" onclick=\"deleteItem(this)\"></td></tr>";
-            contents += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal;
-            total += subTotal;
-        }
-		
+			
+			if (temp[0].length < 20) {
+				itemCount++;
+				subTotal = (temp[1] * temp[2]);
+				contents += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal;
+				cartList += contents + "</td>\n<td><input type=\"button\" class=\"delete\" value=\"Remove\" onclick=\"deleteItem(this)\"></td></tr>";
+				total += subTotal;
+			}
 		}
-
         //takes blank data from the above function and creates an empty list within the cart element
         document.getElementById('cart').innerHTML = cartList;
         document.getElementById('total').innerHTML = "Total: $" + total;
