@@ -35,7 +35,7 @@ function StartUp() {
 		nameInput = document.getElementById('name');
 		phoneInput = document.getElementById('phone');
 		emailInput = document.getElementById('email');
-		commentInput = document.getElementById('comments')
+		commentInput = document.getElementById('comments');
 
         //initialize a empty checkout table
         var cartList = "<tr><th>Item</th><th>Quantity</th><th>Price Per Unit</th><th>Sub-Total</th></tr>\n";
@@ -79,7 +79,7 @@ window.onload = function () {
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
         //emailjs.sendForm('service_yob21g8', 'template_5rq5evc', this)
-
+		
 		if (!emailValid){
 			alert("Invalid Email Address!");
 		}else if (itemCount > 0){
@@ -91,7 +91,7 @@ window.onload = function () {
                 phone: document.getElementById('phone').value,
                 cost: total,
                 contents: contents,
-                comments: validateComment(commentInput.innerHTML),
+                comments: validateComment(commentInput.value)
             })
             .then(function () {
                 console.log('SUCCESS!');
@@ -126,7 +126,7 @@ function validatePhone(){
 	phoneInput.value = phoneInput.value.replace(/\D/g,'');
 }
 
-function validateComment(string){
+function validateComment(){
 	const map = {
       '&': '&amp;',
       '<': '&lt;',
@@ -135,7 +135,7 @@ function validateComment(string){
       "'": '&#x27;',
       "/": '&#x2F;',
 	};
-	return string.replace(reg, (match)=>(map[match]));
+	return commentInput.value.replace(reg, (match)=>(map[match]));
 }
 
 function validateEmail(){
