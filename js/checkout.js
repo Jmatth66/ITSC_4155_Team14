@@ -52,8 +52,8 @@ function StartUp() {
 			if (temp[0].length < 20) {
 				itemCount++;
 				subTotal = (temp[1] * temp[2]);
-				contents += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal;
-				cartList += contents + "</td>\n<td><input type=\"button\" class=\"delete\" value=\"Remove\" onclick=\"deleteItem(this)\"></td></tr>";
+                cartList += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal + "</td>\n<td><input type=\"button\" class=\"delete\" value=\"Remove\" onclick=\"deleteItem(this)\"></td></tr>";
+                contents += "<tr><td>" + temp[0] + "</td>\n<td>" + temp[1] + "</td>\n<td>$" + temp[2] + "</td>\n<td>$" + subTotal;
 				total += subTotal;
 			}
 		}
